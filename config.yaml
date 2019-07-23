@@ -1,0 +1,5 @@
+interfaceOnly: true 
+apiPackage: jp.co.axa.ins.p2p.api
+modelPackage: jp.co.axa.ins.p2p.model
+invokerPackage: jp.co.axa.ins.p2p.api
+configPackage: jp.co.axa.ins.p2p.configuration
