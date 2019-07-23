@@ -393,6 +393,20 @@ components:
           type: integer
           description: User Status
           format: int32
+        premiumPaymentInfo:
+          $ref: '#/components/schemas/PremiumPaymentInfo'
+        insurancePaymentInfo:
+          $ref: '#/components/schemas/InsurancePaymentInfo'
+    PremiumPaymentInfo:
+      type: object
+      properties:
+        method:
+          type: string
+    InsurancePaymentInfo:
+      type: object
+      properties:
+        method:
+          type: string
     ApiResponse:
       type: object
       properties:
@@ -403,3 +417,16 @@ components:
           type: string
         message:
           type: string
+  securitySchemes:
+    petstore_auth:
+      type: oauth2
+      flows:
+        implicit:
+          authorizationUrl: 'http://petstore.swagger.io/oauth/dialog'
+          scopes:
+            'write:pets': modify pets in your account
+            'read:pets': read your pets
+    api_key:
+      type: apiKey
+      name: api_key
+      in: header
